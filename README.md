@@ -2,7 +2,7 @@
 Curso Todo App: API com ASP.NET Core, CQRS e EF Core do balta.io
 
 ## Estrutura da Api
-* ### Todo.Domain: Onde fica o núcleo da sua aplicação, mas não tem instância de nada, apenas é declarado
+* ### Todo.Domain: Onde fica o núcleo da aplicação, mas não tem instância de nada, apenas é declarado
     * Commands: São os comandos que chegarão, por exemplo "Criar novo Todo"
     * Entities: As entidades de sua aplicação, nesse caso temos apenas o Todo
     * Handlers: Feito para manipular os comandos
@@ -10,14 +10,13 @@ Curso Todo App: API com ASP.NET Core, CQRS e EF Core do balta.io
     * Repositories: Onde ficas as representações (interface) das entidades no banco de dados.
 
 * ### Todo.Domain.Infra: Aqui fica a implementação de fato da aplicação, onde fica as "sujeiras" como migrations
-    * Contexts
+    * Contexts: Mapeamento das entidades com as tabelas e campos do banco
     * Migrations: Pasta de controle de migração das informações com o banco de dados
     * Repositories: Aqui é implementado o Repositório real
     
-* ### Todo.Api: 
+* ### Todo.Api: Implementação da API, onde receberá as requisições de fora
     * Controllers: São os itens que recebem as requisições, gerencia e devolve o resultado
     * Models: Models são a referência ao banco de dados
-
 
 * ### Todo.Domain.Tests: Aqui onde se programa os testes do domain
     * CommandTests: Teste dos comandos chegados
